@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./l2task3/public/intern.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/a59b9b09ab.js" crossorigin="anonymous"></script>
+
+    <title>Task 1</title>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap'); */
+        
+        * {
+            margin: 5px;
+            padding: 3px;
+            box-sizing: border-box;
+            font-family: Times New Roman;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 15vh;
+        }
+        
+        .container {
+            width: 400px;
+            border: 2px solid blue;
+            background-color: lightyellow;
+            border-radius: 10px;
+            padding: 20px 10px;
+            box-shadow: 0px 0px 10px rgba(50, 49, 49, .6);
+            height: auto;
+        }
+        
+        .hed {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        
+        .boxcontainer {
+            display: inline-flex;
+        }
+        
+        p {
+            font-size: 1rem;
+            color: green;
+            padding: 5px 10px;
+        }
+        
+        .box1 {
+            width: 50%;
+            padding: 10px 10px;
+            /* border: 1px solid red; */
+        }
+        
+        
+        
+        #unit {
+            font-size: 1.0rem;
+            margin-top: 4.5px;
+        }
+        
+        .valuecontainer {
+            color: black;
+            margin: 10px 0;
+            margin-top: 20px;
+        }
+        
+        .value {
+            width: 100%;
+            height: 30px;
+            margin: 8px 0;
+            font-size: 1.0rem;
+            border-bottom: 2px solid blue        }
+        
+        .button {
+            width: 100%;
+            height: length;
+            font: 1.6rem;
+            color: white;
+            background-color: rgb(169, 112, 201);
+            border-radius: 13px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 20px 0 0 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="hed">Temperature Converter</div>
+<div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyeXCfj7tgAQYW8OxzJNppR1aD2aGfh4G3EA&usqp=CAU", height: 400px;
+   width=100%;/>
+        
+        <div class="boxcontainer">
+            <div class="box1">
+                <p>Degree</p>
+                <input type="number" class="takval" />
+            </div>
+            <div class="box1">
+                <p>Type</p>
+                <select name="" id="unit">   
+                     <option value="Fahrenheit">Fahrenheit</option>
+                     <option value="Celsius">Celsius</option>  
+                </select>
+            </div>
+        </div>
+        <div class="valuecontainer">
+            <p>Output</p>
+            <div class="value"></div>
+        </div>
+        <button onclick="temprature()" class="button">Converter</button>
+    </div>
+</body>
+<script>
+  
+    var par = document.querySelector("#par");
+    let temprature = () => {
+        let opt = document.querySelector("#unit");
+        let display = document.querySelector(".value");
+        var a = document.querySelector(".takval").value;
+        if (opt.value == "Celsius") {
+            console.log(a, "C to F", opt.value)
+            let F = a * (9 / 5) + 32
+            display.innerHTML = F.toFixed(4) + " F"
+
+        } else {
+            console.log(a, "F to C", opt.value)
+            let C = (a - 32) * (5 / 9)
+            display.innerHTML = C.toFixed(4) + " ºC"
+           
+        }
+    }
+</script>
+
+</html>
